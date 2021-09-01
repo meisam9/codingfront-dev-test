@@ -1,0 +1,369 @@
+/* Home
+* ===============
+*
+* Place all your home page declarations here */
+
+ul {
+    list-style: none;
+}
+
+ .stars {
+     color: $star-base-color;
+     transition: color 300ms;
+     display: flex;
+     flex-direction: row-reverse;
+ }
+ .stars i:hover,
+ .stars i:hover ~ i {
+     color: $star-hover;
+ }
+ .slider {
+     @include flex-wrap;
+     justify-content: center;
+     position: relative;
+     padding-top: 20px;
+
+     &__chairs {
+        @include flex-wrap;
+         justify-content: center;
+         img {
+             display: block;
+             width: 100%;
+         }
+         .slider--chair {
+             text-align: center;
+             flex-basis: 30%;
+             @media only screen and (max-width:$bp-large){
+                flex-basis: 50%;
+            }
+             @media only screen and (max-width:$bp-medium){
+                flex-basis: 100%;
+            }
+             h3 {
+                 color:$black;
+             }
+             &-price {
+                color: $color-gray-text-mid;
+             }
+             &-stars {
+                 margin-top: 8px;
+                 justify-content: center;
+             }
+             &:last-child{
+                 
+                 @media only screen and (max-width:$bp-large){
+                    display: none;
+                }
+             }
+             
+             &:first-child{
+                 
+                 @media only screen and (max-width:$bp-medium){
+                    display: none;
+                }
+             }
+
+             
+         }
+     }
+
+     &__arrows {
+         .slider--arrow-left, .slider--arrow-right {
+            padding: 6px 10px;
+            background: $color-white;  
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .slider--arrow-left{   
+            left: 67px;  
+        }
+        .slider--arrow-right{
+            right: 67px;
+        }
+        @media only screen and (max-width:$bp-large){
+            display: none;
+        }
+     }
+
+     &::after{
+        content: "";
+        position: absolute;
+        background: #e8e8e8;
+        top: 0;
+        height: 270px;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+     }
+ }
+
+ .section-title {
+    position: relative;
+    text-align: center;
+    padding: 50px;
+
+    &::before{
+        background: url(../../assets/images/background/section-bg.svg);
+        content: "";
+        width: 100%;
+        transform: translateX(-50%);
+        position: absolute;
+        height: 60px;
+        top: 0;
+        left: 50%;
+        z-index: -2;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+}
+
+ .rooms {
+    @include flex-wrap;
+     text-align: center;
+     margin-top: 50px;
+     & > * {
+         flex: 1 1 33%;
+         @media only screen and (max-width:$bp-medium){
+            flex-basis: 100%;
+        }
+     }
+     img {
+         display: block;
+         width: 100%;
+     }
+
+     &__category {
+         position: relative;
+         &:hover {
+             &> div {
+                 display: block;
+                }
+                &::before {
+                    width: 100%;
+             }
+
+         }
+        &--name {
+            display: none;
+            @include absCenter;
+            color: $color-white;
+            a {   
+                @media only screen and (max-width:$bp-large){
+                    font-size: unset;
+                }
+            }
+        }
+        &::before {
+            content: '';
+            width: 0;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba($black, 0.384);
+            transition: all .4s ease;
+        }
+     }
+ }
+
+
+//  features
+
+.features {
+    margin-top: $gutter;
+    &__products {
+        @include flex-wrap;
+        gap: 20px;
+        
+        &--item {
+            flex: 1 1 25em;
+            display: flex;
+            gap: 10px;
+            transition: transform .2s ease;
+            &> div {
+                flex: 1 1 50%;
+
+            }
+            &:hover {
+                gap: 20px;
+                img {
+                    transform: scale(1.1);
+                    box-shadow:0 5px 8px 0 rgba($color: $black, $alpha: .2);
+                }
+            }
+        }
+
+        .product-price{
+            color: $color-gray-text;
+            margin-bottom: 10px;
+            .product-off {
+                text-decoration: line-through;
+            }
+        }
+        .product-stars{
+            justify-content: flex-end;
+        }
+
+    }
+}
+
+// latest
+
+.latest {
+    margin-top: $gutter;
+
+    &__gallery {
+        @include flex-wrap;
+        &--item {
+            flex: 1 1 25%;
+            min-width: 20em;
+        }
+    }
+}
+
+
+// about 
+.about {
+    margin-top: $gutter;
+    &__items {
+        @include flex-wrap;
+        gap: $element-gap;
+
+        .about__content{
+            flex: 1 1 66%;
+            min-width: 70ch;
+            background: url(../../assets/images/background/room-bg.jpg) no-repeat center center /cover;
+            color: $color-white;
+            @media only screen and (max-width:$bp-small){
+                min-width: unset;
+            }
+            .margin-holder{
+                padding: 41px 30px 41px 30px;
+                .about-text {
+                    margin: 20px 0 35px 0;
+                    line-height: 1.5;
+                    font-size: 1.19rem;
+                }
+                .about-text-days:last-child {
+                    margin-top: 10px;
+                }
+            }
+        }
+        
+        .about__side {
+            flex: 1 1 31%;
+            min-height: 40ch;
+            border: 2px solid $color-gray-text;
+            text-align: center;
+            width: 100%;
+            padding: 70.5px 30px;
+            position: relative;
+            .sitebar{
+                form {
+                    position: relative;
+                    input {
+                        padding: 10px 30px 10px 5px;
+                        border: solid 2px $color-gray;
+                        margin: 30px 0;
+                        width: 100%;
+                    }
+                    button {
+                        position: absolute;
+                        right: 13px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: $color-gray-text-mid;
+                        background: none;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__pics {
+        @include flex-wrap;
+        
+        .about__pic {
+            flex:1 1 33%;
+            margin-top: $element-gap;
+            @media only screen and (max-width:$bp-medium){
+                flex:1 1 100%;
+            }
+            img {
+                min-height: 360px;
+                max-height: 360px;
+                @media only screen and (max-width:$bp-medium){
+                    min-height: unset;
+                    max-height: unset;
+                }
+            }
+        }
+        .margin-left {
+            margin-left: $element-gap;
+            @media only screen and (max-width:$bp-medium){
+                margin-left: 0;
+            }
+            
+        }
+    }
+
+
+}
+// brands
+.brands {
+    @include flex-wrap;
+    justify-content: center;
+    margin-top: $gutter;
+    &__item {
+        filter: opacity(40%);
+        transition: filter .3s ease;
+        &:hover {
+            filter: opacity(100%);
+        }
+    }
+}
+
+// Shipping
+
+.shipping {
+    background: $color-gray;
+    text-align: center;
+    margin-top: $gutter;
+    &> div {
+        @include flex-wrap;
+        justify-content: center;
+        
+    }
+    &__item {
+        flex-basis: 50%;
+        &:first-child {
+            .shipping__item__holder{
+                margin-right: 30px;
+                @media only screen and (max-width:$bp-medium){
+                             margin-right: 0;
+                             margin-bottom: 0;
+                        }
+            }
+        }
+        @media only screen and (max-width:$bp-medium){
+            flex-basis: 100%;
+        }
+        &__holder {
+            padding: 30px 60px;
+            background: $color-white;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 60px 0;
+            @media only screen and (max-width:$bp-medium){
+                margin: 15px 0;
+            }
+    }
+}
+
+}
+
