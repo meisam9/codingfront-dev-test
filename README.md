@@ -1,6 +1,8 @@
-# SCSS Gulp Boilerplate
+# Junior Front-End Development 
+## Aug2021 
+## By Meisam Azizpour
 
->Very Basic Sass(SCSS) boilerplate.
+>Very Basic Sass(SCSS) Template.
 
 ### Prerequisites
 * node
@@ -34,3 +36,7 @@ To minify existing CSS files run `gulp minify-css` or `npm run minify-css` if yo
 * [gulp](http://gulpjs.com)
 * [BrowserSync](http://www.browsersync.io)
 * [node-js](https://nodejs.org/en/)
+
+Thanks to [@vikrantnegi](https://github.com/vikrantnegi/scss-gulp-boilerplate)
+
+Feel free to call me [meisam949494@gmail.com](mailto:meisam949494@gmail.com)
