@@ -40,5 +40,7 @@ To minify existing CSS files run `gulp minify-css` or `npm run minify-css` if yo
 
 Thanks to [@vikrantnegi](https://github.com/vikrantnegi/scss-gulp-boilerplate)
 
-Feel free to call me [meisam949494@gmail.com](mailto:meisam949494@gmail.com)
+[Codingfront.dev Junior Front-End Development Bootcamp](https://codingfront.dev/course/bootcamps/become-a-junior-front-end-developer)
+
+If you would like to get in touch with me, feel free to send me an email at mail. [meisam949494@gmail.com](mailto:meisam949494@gmail.com)
 
