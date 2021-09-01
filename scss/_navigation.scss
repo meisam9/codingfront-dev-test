@@ -1,0 +1,21 @@
+/* Fonts
+* ===============
+*
+* Place all your font declarations here */
+.header__navigation {
+    ul{
+        display: flex;
+        li {
+            padding: 5px;
+            text-transform: uppercase;
+            a {
+                color: $color-gray-text;
+                padding: 21px 5px;
+                &:hover {
+                    text-decoration: unset;
+                    color: #000;
+                }
+            }
+        }
+    }
+}

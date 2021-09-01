@@ -1,0 +1,62 @@
+/* Footer
+* ===============
+*
+* Place all your footer declarations here */
+// Footer
+
+.footer {
+    &-top {
+        margin-top: $gutter;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        &-column{
+            min-width: 7em;
+            ul {
+                li {
+                    &:not(:last-child){
+                        margin-bottom: 7px;
+                    }
+                    a {
+                        &:hover {
+                            color: $black;
+                        }
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width:$bp-medium){
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+        }
+        
+        h3 {
+            font-size: unset;
+        }
+        
+    }
+    &-bottom {
+        text-align: center;
+        margin-top: 30px;
+        background: $color-gray;
+        &-items {
+            @include flex-wrap;
+            justify-content: center;
+            i{
+                padding: 2.5em;
+                color: $gray-base;
+                font-size: 1.1rem;
+                transition: color .2s ease;
+
+                &:hover {
+                    color: rgb(10, 10, 122);
+                }
+            }
+        }
+        &-text {
+            color: $gray-base;
+            font-size: 1.1rem;
+            
+        }
+    }
+}
