@@ -8,7 +8,9 @@ ul {
 }
 
  .stars {
-     color: $star-base-color;
+     color: $star-base-color; //  stars icon color
+     fill: $color-white;     //  stars svg fill color
+     stroke:$star-base-color ; //  stars svg stroke color
      transition: color 300ms;
      display: flex;
      flex-direction: row-reverse;
@@ -16,6 +18,11 @@ ul {
  .stars i:hover,
  .stars i:hover ~ i {
      color: $star-hover;
+ }
+ .stars svg:hover,
+ .stars svg:hover ~ svg {
+     fill:$star-hover;
+     stroke: $star-hover
  }
  .slider {
      @include flex-wrap;
@@ -183,14 +190,15 @@ ul {
             display: flex;
             gap: 10px;
             transition: transform .2s ease;
+            text-transform: capitalize;
             &> div {
                 flex: 1 1 50%;
+                overflow: hidden;
 
             }
             &:hover {
-                gap: 20px;
                 img {
-                    transform: scale(1.1);
+                    transform: scale(1.15);
                     box-shadow:0 5px 8px 0 rgba($color: $black, $alpha: .2);
                 }
             }
@@ -237,7 +245,7 @@ ul {
             min-width: 70ch;
             background: url(../../assets/images/background/room-bg.jpg) no-repeat center center /cover;
             color: $color-white;
-            @media only screen and (max-width:$bp-small){
+            @media only screen and (max-width:$bp-medium){
                 min-width: unset;
             }
             .margin-holder{
@@ -255,7 +263,7 @@ ul {
         
         .about__side {
             flex: 1 1 31%;
-            min-height: 40ch;
+            min-width: 33ch;
             border: 2px solid $color-gray-text;
             text-align: center;
             width: 100%;

@@ -567,6 +567,8 @@ ul {
 
 .stars {
   color: #31bfbf;
+  fill: #fff;
+  stroke: #31bfbf;
   transition: color 300ms;
   display: flex;
   flex-direction: row-reverse;
@@ -575,6 +577,12 @@ ul {
 .stars i:hover,
 .stars i:hover ~ i {
   color: gold;
+}
+
+.stars svg:hover,
+.stars svg:hover ~ svg {
+  fill: gold;
+  stroke: gold;
 }
 
 .slider {
@@ -772,18 +780,16 @@ ul {
   display: flex;
   gap: 10px;
   transition: transform .2s ease;
+  text-transform: capitalize;
 }
 
 .features__products--item > div {
   flex: 1 1 50%;
-}
-
-.features__products--item:hover {
-  gap: 20px;
+  overflow: hidden;
 }
 
 .features__products--item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.15);
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -833,7 +839,7 @@ ul {
   color: #fff;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 50em) {
   .about__items .about__content {
     min-width: unset;
   }
@@ -855,7 +861,7 @@ ul {
 
 .about__items .about__side {
   flex: 1 1 31%;
-  min-height: 40ch;
+  min-width: 33ch;
   border: 2px solid #999;
   text-align: center;
   width: 100%;
