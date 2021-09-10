@@ -21,6 +21,51 @@
 /*== Overlays*/
 /**/
 /*## Color overlays over images on banner or image grid galleries*/
+.stars {
+  color: #31bfbf;
+  fill: #fff;
+  stroke: #31bfbf;
+  transition: color 300ms;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.stars i:hover,
+.stars i:hover ~ i {
+  color: gold;
+}
+
+.stars svg:hover,
+.stars svg:hover ~ svg {
+  fill: gold;
+  stroke: gold;
+}
+
+.section-title {
+  position: relative;
+  text-align: center;
+  padding: 50px;
+}
+
+.section-title span {
+  display: inline-block;
+}
+
+.section-title::before {
+  background: url(../../assets/images/background/section-bg.svg);
+  content: "";
+  width: 100%;
+  transform: translateX(-50%);
+  position: absolute;
+  height: 60px;
+  top: 0;
+  left: 50%;
+  z-index: -2;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 /* Fonts
 * ===============
 *
@@ -455,6 +500,10 @@ template {
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+}
+
 html {
   font-size: 14px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -561,30 +610,6 @@ figure {
 * ===============
 *
 * Place all your home page declarations here */
-ul {
-  list-style: none;
-}
-
-.stars {
-  color: #31bfbf;
-  fill: #fff;
-  stroke: #31bfbf;
-  transition: color 300ms;
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.stars i:hover,
-.stars i:hover ~ i {
-  color: gold;
-}
-
-.stars svg:hover,
-.stars svg:hover ~ svg {
-  fill: gold;
-  stroke: gold;
-}
-
 .slider {
   display: flex;
   flex-direction: row;
@@ -680,27 +705,6 @@ ul {
   left: 0;
   width: 100%;
   z-index: -1;
-}
-
-.section-title {
-  position: relative;
-  text-align: center;
-  padding: 50px;
-}
-
-.section-title::before {
-  background: url(../../assets/images/background/section-bg.svg);
-  content: "";
-  width: 100%;
-  transform: translateX(-50%);
-  position: absolute;
-  height: 60px;
-  top: 0;
-  left: 50%;
-  z-index: -2;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
 }
 
 .rooms {
@@ -820,6 +824,7 @@ ul {
   flex: 1 1 25%;
   min-width: 20em;
   position: relative;
+  overflow: hidden;
 }
 
 .latest__gallery--item::before {
@@ -843,11 +848,11 @@ ul {
 .latest__gallery--item span a {
   color: #fff;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .latest__gallery--item span a:hover {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .latest__gallery--item:hover::before {
@@ -1051,7 +1056,7 @@ ul {
 }
 
 .shipping__item__holder {
-  padding: 30px 60px;
+  padding: 40px 60px;
   background: #fff;
   font-size: 2rem;
   text-transform: uppercase;

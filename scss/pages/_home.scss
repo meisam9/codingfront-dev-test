@@ -3,27 +3,7 @@
 *
 * Place all your home page declarations here */
 
-ul {
-    list-style: none;
-}
 
- .stars {
-     color: $star-base-color; //  stars icon color
-     fill: $color-white;     //  stars svg fill color
-     stroke:$star-base-color ; //  stars svg stroke color
-     transition: color 300ms;
-     display: flex;
-     flex-direction: row-reverse;
- }
- .stars i:hover,
- .stars i:hover ~ i {
-     color: $star-hover;
- }
- .stars svg:hover,
- .stars svg:hover ~ svg {
-     fill:$star-hover;
-     stroke: $star-hover
- }
  .slider {
      @include flex-wrap;
      justify-content: center;
@@ -106,26 +86,7 @@ ul {
      }
  }
 
- .section-title {
-    position: relative;
-    text-align: center;
-    padding: 50px;
-
-    &::before{
-        background: url(../../assets/images/background/section-bg.svg);
-        content: "";
-        width: 100%;
-        transform: translateX(-50%);
-        position: absolute;
-        height: 60px;
-        top: 0;
-        left: 50%;
-        z-index: -2;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-    }
-}
+ 
 
  .rooms {
     @include flex-wrap;
@@ -229,6 +190,7 @@ ul {
             flex: 1 1 25%;
             min-width: 20em;
             position: relative;
+            overflow: hidden;
             &::before {
                 content: "";
                 position: absolute;
@@ -249,9 +211,9 @@ ul {
                 a {
                     color: $color-white;
                     text-transform: uppercase;
-                    font-size: 1.5rem;
+                    font-size: 1.3rem;
                     &:hover {
-                        font-size: 2rem;
+                        font-size: 1.5rem;
                     }
                 }
             }
@@ -433,7 +395,7 @@ ul {
             flex-basis: 100%;
         }
         &__holder {
-            padding: 30px 60px;
+            padding: 40px 60px;
             background: $color-white;
             font-size: 2rem;
             text-transform: uppercase;
